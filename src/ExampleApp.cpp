@@ -151,7 +151,7 @@ void ExampleApp::onRenderGraphicsContext(const VRGraphicsState& renderState) {
 	glm::mat4 mat_identity = mat4(1.0);
 	glm::mat4 mat_to_origin = glm::translate(mat_identity, -ballPos);
 	glm::mat4 mat_rotX = glm::rotate(mat_identity, radians(dir.z * ROT_SPEED), vec3(1, 0, 0));
-	glm::mat4 mat_rotZ = glm::rotate(mat_identity, radians(dir.x * ROT_SPEED), vec3(0, 0, 1));
+	glm::mat4 mat_rotZ = glm::rotate(mat_identity, radians(-dir.x * ROT_SPEED), vec3(0, 0, 1));
 	glm::mat4 mat_from_origin = glm::translate(mat_identity, ballPos + dir);
 	sphereFrame = mat_from_origin * mat_rotZ * mat_rotX * mat_to_origin * sphereFrame;
 }
